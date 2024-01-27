@@ -17,12 +17,12 @@ class SesiController extends Controller
             'password'=>'required'
         ],[
             'email.required'=>'Email wajib di isi',
-            'password.required'=>'Password wajib di isi',
+            'password.required'=>'Password wajib di isi'
         ]);
 
         $infologin = [
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => $request->password
         ];
 
         if(Auth::attempt($infologin)) {
@@ -39,7 +39,7 @@ class SesiController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect('');
+        return redirect('admin');
     }
 }
 }
