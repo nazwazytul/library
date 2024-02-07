@@ -18,7 +18,7 @@
     </div>
     <div class="mb-3">
         <label for="alamat" class="form-label">alamat</label>
-        <input type="text" name="alamat" class="from-control"id="stok" value="{{$data->alamat}}">       
+        <input type="text" name="alamat" class="from-control"id="alamat" value="{{$data->alamat}}">       
     </div>
     <div class="mb-3">
         <label for="no_telp" class="form-label">no_telp</label>

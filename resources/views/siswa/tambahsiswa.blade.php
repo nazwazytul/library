@@ -1,14 +1,13 @@
 @extends('layouts.main')
-
 @section('konten')
 <form action="/siswa/store" method="post">
     @csrf
     <div class="mb-3">
-        <label for="id" class="form-label">Id_siswa</label>
-        <input type="text" name="id" class="form-control" id="id">
+        <label for="id_siswa" class="form-label">Id Siswa</label>
+        <input type="text" name="id_siswa" class="form-control" id="id_siswa">
     </div>
     <div class="mb-3">
-        <label for="nama_siswa" class="form-label">nama_siswa</label>
+        <label for="nama_siswa" class="form-label">Nama Siswa</label>
         <input type="text" name="nama_siswa" class="form-control" id="nama_siswa">
     </div>
     <div class="mb-3">

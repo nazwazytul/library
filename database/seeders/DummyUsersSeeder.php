@@ -17,21 +17,22 @@ class DummyUsersSeeder extends Seeder
     {
         $userData = [
             [
-                'name'=>'Admin Perpustakan',
-                'email'=>'adminperpus@gmail.com',
-                'role'=>'admin',
-                'password'=>bcrypt('iniadmin')
-            ],
-            [
                 'name'=>'Petugas Perpustakaan',
                 'email'=>'petugasperpus@gmail.com',
                 'role'=>'petugas',
-                'password'=>bcrypt('inipetugas')
+                'password'=>bcrypt('rahasia2')
+
+            ],
+            [
+                'name'=>'Admin Perpustakaan',
+                'email'=>'adminperpus@gmail.com',
+                'role'=>'admin',
+                'password'=>bcrypt('rahasia1')
             ],
         ];
 
         foreach($userData as $key => $val){
-            User::create($val);
+            User::create($val); 
         }
     }
 }

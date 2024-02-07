@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class BukuModel extends Model
 {
     use HasFactory;
-    use HasFactory;
     protected $table = 'bukus';
     protected $fillable = ['id_buku','judul','penerbit','stok'];
     

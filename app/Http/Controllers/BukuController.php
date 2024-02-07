@@ -42,24 +42,24 @@ class BukuController extends Controller
     }
 
     //untuk detail data
-    public function show($id_buku){
-    $data = BukuModel::where('id_buku',$id_buku)->first();
+    public function show($id){
+    $data = BukuModel::where('id_buku',$id)->first();
         return View('buku.detail')->with('data',$data);
     }
     
     //untuk menghapus data 
-    public function destroy($id_buku){
-        BukuModel::where('id_buku',$id_buku)->delete();
+    public function destroy($id){
+        BukuModel::where('id_buku',$id)->delete();
         return redirect('/buku')->with('msg',"Data Berhasil dihapus");
     }
 
     //menuju kr form edit
-    public function edit($id_buku){
-        $data = BukuModel::where('id_buku',$id_buku)->first();
+    public function edit($id){
+        $data = BukuModel::where('id_buku',$id)->first();
         return View('buku.editbuku')->with('data',$data);
     }
     //proses update data
-    public function update(Request $r,$id_buku){
+    public function update(Request $r,$id){
         //simpan update data
         $r->validate([
             'judul'=>'required',
@@ -71,7 +71,7 @@ class BukuController extends Controller
             'penerbit'=> $r->input('penerbit'),
             'stok'=> $r->input('stok')
         ];
-        BukuModel::where('id_buku',$id_buku)->update($data);
+        BukuModel::where('id_buku',$id)->update($data);
         return redirect('buku')->with('msg',"Data Berhasil diubah!");
 }
 }

@@ -9,14 +9,15 @@ class AdminController extends Controller
 {
     function index()
     {
-        return view('login');
-    }
-    function admin()
-    {
         return view('admin');
     }
     function petugas()
     {
         return view('petugas');
     }
+    function admin()
+    {
+        return view('admin');
+    }
+
 }

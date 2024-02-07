@@ -1,4 +1,4 @@
-
+@extends('layouts.main')
 @section('konten')
 <form action="/buku/store" method="post">
     @csrf

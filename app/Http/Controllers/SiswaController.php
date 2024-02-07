@@ -15,12 +15,12 @@ class SiswaController extends Controller
         //'dataSiswa'=> SiswaModel::all()
         'dataSiswa'=>SiswaModel::orderBy('id_siswa','desc')->paginate(5)
         ];
-        return View('Siswa.data', $data);
+        return View('siswa.data', $data);
     }
 
     public function create(){
         //menuju form tambah
-        return View('Siswa.tambahSiswa');
+        return View('siswa.tambahSiswa');
     }
 
     public function store(Request $r){
@@ -40,25 +40,25 @@ class SiswaController extends Controller
             'no_telp'=> $r->input('no_telp')
         ];
         SiswaModel::create($data);
-        return redirect('Siswa')->with('msg',"Data Berhasil disimpan");
+        return redirect('siswa')->with('msg',"Data Berhasil disimpan");
     }
 
     //untuk detail data
     public function show($id){
         $data = SiswaModel::where('id_siswa',$id)->first();
-        return View('Siswa.detail')->with('data',$data);
+        return View('siswa.detail')->with('data',$data);
     }
     
     //untuk menghapus data 
     public function destroy($id){
         SiswaModel::where('id_siswa',$id)->delete();
-        return redirect('/Siswa')->with('msg',"Data Berhasil dihapus");
+        return redirect('/siswa')->with('msg',"Data Berhasil dihapus");
     }
 
     //menuju kr form edit
     public function edit($id){
         $data = SiswaModel::where('id_siswa',$id)->first();
-        return View('Siswa.editSiswa')->with('data',$data);
+        return View('siswa.editSiswa')->with('data',$data);
     }
     //proses update data
     public function update(Request $r,$id){

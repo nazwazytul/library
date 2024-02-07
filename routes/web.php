@@ -17,20 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::middleware(['guest'])->group(function () {
-    Route::get('/',[SesiController::class, 'index'])->name('login');
-    Route::post('/',[SesiController::class, 'login']);
-});
-Route::get('/home', function() {
-    return redirect('/admin');
-});
-Route::middleware(['auth'])->group(function(){
-    Route::get('/admin',[AdminController::class, 'index']);
-    Route::get('/logout',[SesiController::class, 'logout']);
-    Route::get('/admin/admin',[AdminController::class, 'admin'])->middleware('userAkses:admin');
-    Route::get('/admin/petugas',[AdminController::class, 'petugas'])->middleware('userAkses:petugas');
-});
+    Route::get('/',[SesiController::class,'index'])->name('login');
+    Route::post('/',[SesiController::class,'login']);
+    });
+    
+    Route::get('/home', function(){
+        return redirect('/admin');
+        
+    });
+    
+    Route::middleware(['auth'])->group(function(){
+        Route::get('/admin',[AdminController::class,'index']);
+        Route::get('/admin/admin',[AdminController::class,'admin'])->middleware('userAkses:admin');
+        Route::get('/admin/petugas',[AdminController::class,'petugas'])->middleware('userAkses:petugas');
+        Route::get('/logout',[SesiController::class,'logout']);
+    });
 
 Route::resource('buku', BukuController::class);
 Route::resource('siswa', SiswaController::class);
